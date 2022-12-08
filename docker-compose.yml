@@ -22,8 +22,9 @@ services:
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: Pa55w0rd
       JDBC_PARAMS: "useSSL=false"
+    entrypoint: ["/opt/keycloak/bin/kc.sh", "start-dev"]
     volumes:
-      - ./themes/codelens:/opt/jboss/keycloak/themes/codelens
+      - ./themes/codelens:/opt/keycloak/themes/codelens
     expose:
       - "8080"
     ports:
